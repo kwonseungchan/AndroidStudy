@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+    <!--
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_centerInParent="true"
+
+    android:layout_above="@+id/centerTv"
+    android:layout_below="@+id/centerTv"
+    android:layout_toLeftOf="@+id/centerTv"
+    android:layout_toRightOf="@+id/centerTv"
+
+    android:layout_alignLeft="@+id/centerTv"
+    android:layout_alignRight="@+id/centerTv"
+    android:layout_alignTop="@+id/centerTv"
+    android:layout_alignBottom="@+id/centerTv"
+    -->
+
+    <TextView
+        android:id="@+id/centerTv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:background="#105120"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <TextView
+
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:text="B"
+        android:textColor="#ffffff"
+        android:textSize="40sp" />
+
+</RelativeLayout>
