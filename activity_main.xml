@@ -2,52 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/engEt"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:visibility="visible"
-        android:layout_marginTop="100dp"
-        android:text="Hello World!"
-        android:textSize="35sp" />
+        android:hint="영어"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:textSize="38sp" />
+
+    <EditText
+        android:id="@+id/korEt"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/engEt"
+        android:hint="한글"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:textSize="38sp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn1"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="180dp"
-        android:text="click1"
+        android:layout_alignTop="@+id/engEt"
+        android:layout_alignBottom="@+id/korEt"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/engEt"
+        android:text="클릭"
         android:textSize="35sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/btn1"
-        android:text="click2"
-        android:textSize="35sp" />
-
-    <!--
-    모든 이미지는 res 내 drawable-xxhdpi
-    res 안의 모든 파일은 영어 소문자, 언더라인, 숫자만 가능
-    1. 이미지뷰와 이미지의 크기가 일치하는 것은 보장되지 않음
-    2. scaleType 으로 이미지뷰에 보이는 옵션 조정가능
-    3. background와 src를 구별 잘해서 쓰자
-       (fitStart, fitCenter, fitEnd, FitXY 제일 많이 씀)
-    -->
-
-    <ImageView
-        android:id="@+id/iv"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/abc"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp" />
+    <ListView
+        android:id="@+id/listV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btn" />
 
 </RelativeLayout>

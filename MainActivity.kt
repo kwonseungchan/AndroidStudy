@@ -1,37 +1,31 @@
-package com.example.edittext
+package com.example.voca
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity() , View.OnClickListener, AdapterView.OnItemClickListener {
     var vocaArr : ArrayList<String> = arrayListOf()
     lateinit var btn : Button
-    lateinit var tv : TextView
     lateinit var engEt : EditText
     lateinit var korEt : EditText
+    lateinit var listV : ListView
+    lateinit var adapter : ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn = findViewById(R.id.btn)
-        tv = findViewById(R.id.tv)
         engEt = findViewById(R.id.engEt)
         korEt = findViewById(R.id.korEt)
+        listV = findViewById(R.id.listV)
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, vocaArr)
+        listV.adapter = adapter
 
         btn.setOnClickListener(this)
-    }
-
-    fun setVoca(){
-        var tempStr : String = ""
-        for (i in 0 until vocaArr.size step 1){
-            tempStr = tempStr + vocaArr.get(i) + "\n"
-        }
-        tv.text = tempStr
+        listV.onItemClickListener = this
     }
 
     override fun onClick(p0: View?) {
@@ -40,6 +34,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         engEt.setText("")
         korEt.setText("")
         vocaArr.add(eng +"  /  "+ kor)
-        setVoca()
+        adapter.notifyDataSetChanged()
+    }
+
+    override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+
+        Log.d("aabb","position: "+p2)
     }
 }
